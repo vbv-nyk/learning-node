@@ -21,10 +21,10 @@ const server = http.createServer((req, res) => {
       const data = Buffer.concat(bufferData).toString();
       const message = data.split("=")[1];
       fs.writeFileSync("message.txt", message);
+      res.statusCode = 302;
+      res.setHeader("location", "/");
+      return res.end();
     });
-    res.statusCode = 302;
-    res.setHeader("location", "/");
-    return res.end();
   }
   res.write("Thank you for submitting your feedback!");
   res.end();
