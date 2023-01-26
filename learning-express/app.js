@@ -1,21 +1,22 @@
 const express = require("express");
-
 const app = express();
+const bodyParser = require("body-parser");
 
-app.use("/", (req, res, next) => {
-  console.log("This always runs");
-  next();
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use("/thank-you", (req, res, next) => {
+  res.send("<h1>Thank you for submitting your feeback</h1>");
+});
+app.post("/items", (req, res, next) => {
+  console.log(req.body);
+  res.redirect("/thank-you");
 });
 
-app.use("/about-me", (req, res, next) => {
-  console.log("Express is handling the path /about-me");
-  res.send(`<h1>About me</h1>`);
-});
-
 app.use("/", (req, res, next) => {
-  res.send(
-    "<h1>After checking all above paths, you come here. You did have a long way to go ;)</h1>"
-  );
+  res.send(`<form method="POST" action="/items">
+        <input type="text" name="message"/>
+        <button type="submit">Button</button>
+    </form>`);
 });
 
 app.listen(3000);
