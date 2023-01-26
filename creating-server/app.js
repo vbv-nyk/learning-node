@@ -17,13 +17,14 @@ const server = http.createServer((req, res) => {
     req.on("data", (chunk) => {
       bufferData.push(chunk);
     });
-    req.on("end", () => {
+    return req.on("end", () => {
       const data = Buffer.concat(bufferData).toString();
       const message = data.split("=")[1];
-      fs.writeFileSync("message.txt", message);
-      res.statusCode = 302;
-      res.setHeader("location", "/");
-      return res.end();
+      fs.writeFile("message.txt", message, (err) => {
+        res.statusCode = 302;
+        res.setHeader("location", "/");
+        return res.end();
+      });
     });
   }
   res.write("Thank you for submitting your feedback!");
