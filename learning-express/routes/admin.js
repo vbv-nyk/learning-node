@@ -2,8 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
-router.use("/thank-you", (req, res, next) => {
-  res.send("<h1>Thank you for submitting your feeback</h1>");
+router.get("/thank-you", (req, res, next) => {
+  res.send("<h1>Your item has been successfully added</h1>");
 });
 
 router.post("/items", (req, res, next) => {
