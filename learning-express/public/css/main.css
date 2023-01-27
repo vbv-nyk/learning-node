@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.navbar-container {
+  background-color: rgb(80, 36, 36);
+}
+.navbar {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  padding: 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

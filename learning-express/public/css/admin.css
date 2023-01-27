@@ -1,0 +1,16 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+}
+.submit-button {
+  background-color: transparent;
+  padding: 5px 2px;
+  border: solid 1px black;
+}
