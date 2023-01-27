@@ -4,7 +4,7 @@ const path = require("path");
 const { items } = require("./admin");
 
 router.get("/", (req, res, next) => {
-  res.render("shop", items);
+  res.render("shop", { items });
 });
 
 module.exports = router;
