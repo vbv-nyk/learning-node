@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 const bodyParser = require("body-parser");
-const adminPage = require("./routes/admin");
+const { router: adminPage, items } = require("./routes/admin");
 const shopPage = require("./routes/shop");
 
 const path = require("path");

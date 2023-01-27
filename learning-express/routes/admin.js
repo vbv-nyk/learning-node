@@ -16,4 +16,4 @@ router.get("/add-item", (req, res, next) => {
   res.render("admin");
 });
 
-module.exports = router;
+module.exports = { router, items };
