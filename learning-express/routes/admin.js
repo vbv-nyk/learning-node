@@ -2,17 +2,13 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/thank-you", (req, res, next) => {
-  res.send("<h1>Your item has been successfully added</h1>");
-});
-
-router.post("/items", (req, res, next) => {
+router.post("/add-item", (req, res, next) => {
   console.log(req.body);
-  res.redirect("/thank-you");
+  res.redirect("/add-item");
 });
 
 router.get("/add-item", (req, res, next) => {
-  res.send(`<form method="POST" action="/items">
+  res.send(`<form method="POST" action="/add-item">
           <input type="text" name="message"/>
           <button type="submit">Button</button>
       </form>`);
