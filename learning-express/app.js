@@ -7,5 +7,8 @@ const shopPage = require("./routes/shop");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(adminPage);
 app.use(shopPage);
+app.use("/", (req, res, next) => {
+  res.status(404).send("<h3>Page not found</h.status(404)3>");
+});
 
 app.listen(3000);
