@@ -1,0 +1,13 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<%- include('../includes/navbar.ejs') %>
+<section>
+  <h1>Welcome to the shop</h1>
+</section>
+<% if(items.length > 0) {%>
+<% items.forEach((item,index)=>{ %>
+<h1><%= index+1 %>. <%= item %></h1>
+<% }) %> <% } else { %>
+<h1>You don't have any items yet</h1>
+<% } %>
+<%- include('../includes/end') %>
