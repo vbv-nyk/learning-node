@@ -7,4 +7,4 @@ router.post("/add-item", prodsController.postAddItem);
 
 router.get("/add-item", prodsController.getAddItem);
 
-module.exports = { router };
+module.exports = router;

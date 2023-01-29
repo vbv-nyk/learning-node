@@ -6,7 +6,7 @@
 </section>
 <% if(items.length > 0) {%>
 <% items.forEach((item,index)=>{ %>
-<h1><%= index %> <%= item %></h1>
+<h1><%= index+1 %>. <%= item %></h1>
 <% }) %> <% } else { %>
 <h1>You don't have any items yet</h1>
 <% } %>
