@@ -7,7 +7,7 @@ const products = [];
 const rootDir = require.main.path;
 
 exports.getAddItem = (req, res, next) => {
-  res.render("admin");
+  res.render("admin/admin");
 };
 
 exports.postAddItem = (req, res, next) => {
@@ -40,6 +40,6 @@ exports.displayItems = (req, res, next) => {
       while (items.length) items.pop();
       items.push(...JSON.parse(data));
     }
-    res.render("shop", { items });
+    res.render("shop/product-list", { items });
   });
 };
